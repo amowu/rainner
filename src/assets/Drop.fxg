@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Graphic version="2.0" viewHeight="1" viewWidth="70" ATE:version="1.0.0" flm:version="1.0.0" d:using="" pd:backgroundColor="0" xmlns="http://ns.adobe.com/fxg/2008" xmlns:ATE="http://ns.adobe.com/ate/2009" xmlns:d="http://ns.adobe.com/fxg/2008/dt" xmlns:flm="http://ns.adobe.com/flame/2008" xmlns:pd="http://ns.adobe.com/xfl/2008/pd">
+  <Library>
+    <Definition name="Graphic_shape_1" flm:originalName="Graphic/shape 1" pd:symbolType="1">
+      <Group pd:symbolType="1">
+        <Group d:type="layer" d:userLabel="Layer 1">
+          <Path data="M0.4 -14.65 0.45 -11.5 0.4 15.75 0.25 25.9 -0.05 34.55 -0.3 25.9 -0.4 15.75 -0.4 -11.5 -0.4 -14.65 -0.3 -24 -0.05 -34.75Q0.1 -37.55 0.25 -26.8L0.4 -14.65">
+            <fill>
+              <RadialGradient x="0.05" y="10.65" scaleX="4.75" scaleY="64.875">
+                <GradientEntry ratio="0" color="#FFFFFF" alpha="0.90196078"/>
+                <GradientEntry ratio="1" color="#FFFFFF" alpha="0.39215686"/>
+              </RadialGradient>
+            </fill>
+          </Path>
+        </Group>
+      </Group>
+    </Definition>
+  </Library>
+  <Group d:type="layer" d:userLabel="圖層 1">
+    <Graphic_shape_1 rotation="90" x="34.6" y="0.5"/>
+  </Group>
+  <Private/>
+</Graphic>
