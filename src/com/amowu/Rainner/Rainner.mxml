@@ -15,21 +15,21 @@
 			
 			private function onCreate(event:FlexEvent):void
 			{
-				this.stageWidth = this.parentApplication.width;
-				this.stageHeight = this.parentApplication.height;
-				this.addEventListener(Event.ENTER_FRAME, onLoop);
+				stageWidth = this.parentApplication.width;
+				stageHeight = this.parentApplication.height;
+				addEventListener(Event.ENTER_FRAME, onLoop);
 			}
 			
 			private function onLoop(event:Event):void
 			{
 				var drop:Drop = new Drop();
-				drop.x = Math.random() * this.stageWidth;
+				drop.x = Math.random() * stageWidth;
 				drop.y = -10;
 				drop.rotation = 80 + Math.random() * 20;
 				drop.scaleX = drop.scaleY = 0.5 + Math.random();
 				drop.addEventListener(Event.ENTER_FRAME, onDropFall);
 				
-				this.addElement(drop);
+				addElement(drop);
 			}
 			
 			private function onDropFall(event:Event):void
@@ -38,10 +38,11 @@
 				drop.x += (50*drop.scaleX)*Math.cos(drop.rotation/180*Math.PI);
 				drop.y += (50*drop.scaleX)*Math.sin(drop.rotation/180*Math.PI);
 				
-				if (drop.y > this.stageHeight)
+				if (drop.y > stageHeight)
 				{
 					drop.removeEventListener(Event.ENTER_FRAME, onDropFall);
-					this.removeElement(drop);
+					
+					removeElement(drop);
 				}
 			}
 			
