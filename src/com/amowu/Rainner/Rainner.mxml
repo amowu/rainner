@@ -10,13 +10,43 @@
 			
 			import mx.events.FlexEvent;
 			
+			public static const NO_DIRECTION:int = 0;
+			public static const LEFT:int = 1;
+			public static const RIGHT:int = -1;
+			
+			protected var degrees:Number = 90;
+			protected var offset:Number = 30;
+			
 			private var stageWidth:Number;
 			private var stageHeight:Number;
+			
+			private var _direction:int = -1;
+			
+			public function get direction():int
+			{
+				return _direction;
+			}
+			
+			public function set direction(value:int):void
+			{
+				switch (value)
+				{
+					default:
+						_direction = NO_DIRECTION;
+						break;
+					case NO_DIRECTION:
+					case LEFT:
+					case RIGHT:
+						_direction = value;
+						break;
+				}
+			}
 			
 			private function onCreate(event:FlexEvent):void
 			{
 				stageWidth = this.parentApplication.width;
 				stageHeight = this.parentApplication.height;
+				
 				addEventListener(Event.ENTER_FRAME, onLoop);
 			}
 			
@@ -25,7 +55,7 @@
 				var drop:Drop = new Drop();
 				drop.x = Math.random() * stageWidth;
 				drop.y = -10;
-				drop.rotation = 80 + Math.random() * 20;
+				drop.rotation = degrees + Math.random() * offset * _direction;
 				drop.scaleX = drop.scaleY = 0.5 + Math.random();
 				drop.addEventListener(Event.ENTER_FRAME, onDropFall);
 				
